@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPFPaginationAndSerching.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFPaginationAndSerching"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <TextBlock  Text="Data Grid - Custom Pagination" VerticalAlignment="Center" FontSize="16"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,10">
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <TextBlock  Text="First Name  "/>
+                <TextBox x:Name="txtFirstName"  Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock  Text="Last Name  "/>
+                <TextBox x:Name="txtLastName"  Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock  Text="Email  "/>
+                <TextBox x:Name="txtEmail"  Width="100"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10">
+            <Button x:Name="btnSearch" Content="Search" Width="100" Click="btnSearch_Click"/>
+            <Button x:Name="btnViewAll" Content="View All" Width="100"  Margin="10,0,0,0" Click="btnViewAll_Click"/>
+        </StackPanel>
+        <DataGrid x:Name="gridViewMockData" Grid.Row="3">
+            
+        </DataGrid>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0,5">
+            <Button x:Name="btnPrevious" Content="Previous" Width="100" Click="btnPrevious_Click"/>
+            <ComboBox x:Name="ddlCustomPagination" Margin="5,0" Width="100"  SelectionChanged="ddlCustomPagination_SelectionChanged" SelectedIndex="0"/>
+            <TextBlock x:Name="lblTotalPages" Margin="5,0" VerticalAlignment="Center"/>
+            <Button x:Name="btnNext" Content="Next" Width="100" Click="btnNext_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
